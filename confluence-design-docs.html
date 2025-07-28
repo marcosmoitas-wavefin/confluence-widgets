@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confluence Design Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* * Main container for the content tile.
+      * Uses flexbox for layout and sets a max-width.
+      * Includes a border, rounded corners, and a box shadow for a card-like appearance.
+      * The transition on box-shadow provides a subtle hover effect.
+    */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #FFF; /* Light background for contrast */
+        margin: 0;
+        padding: 16px;
+    }
+
+    .content-tile {
+        display: flex;
+        flex-direction: column;
+        max-width: 320px;
+        height: 360px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        border: 1px solid #dfe1e6;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0,0,0,0);
+        transition: box-shadow 0.3s ease-in-out;
+        background-color: #ffffff;
+        text-decoration: none !important; /* Removes underline from the link */
+        color: inherit; /* Inherits text color */
+    }
+
+    /* * Hover effect for the tile.
+      * Increases the box-shadow to give a "lifted" effect.
+    */
+    .content-tile:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        border-color: blue;
+    }
+
+    /* * Styles for the image container.
+      * Ensures the image takes up the full width of the tile.
+    */
+    .tile-image-container {
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        position: relative;
+        background-color: #E0F2FF; /* Placeholder color */
+    }
+
+    /* * Styles the image itself.
+      * Positions the image within its container and ensures it covers the area.
+    */
+    .tile-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ensures the image covers the container without distortion */
+    }
+
+    /* * Container for the text content (title and description).
+      * Adds padding for spacing.
+    */
+    .tile-content {
+        padding: 16px;
+    }
+
+    /* * Styles for the tile's title.
+      * Sets font size, weight, and color.
+    */
+    .tile-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #172b4d;
+        margin: 0 0 8px 0;
+        text-decoration: none;
+    }
+
+    /* * Styles for the tile's description.
+      * Sets font size, color, and line height for readability.
+    */
+    .tile-description {
+        font-size: 14px;
+        color: #42526e;
+        line-height: 1.5;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    /* Add this for the tiles row layout */
+    .tiles-row {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin-bottom: 32px;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .content-tile {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 100%;
+        height: 380px; /* Fixed height for all tiles */
+        display: flex;
+        flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add this wrapper around your tiles -->
+  <div class="tiles-row">
+      <!-- TILE 1 -->
+      <a href="https://waveaccounting.atlassian.net/wiki/spaces/P2/pages/5562990593/WIP+Design+guidelines+101" target="_blank" class="content-tile">
+          <!-- Image Section -->
+          <div class="tile-image-container">
+              <img class="tile-image"
+                    src="https://illustrations.waveapps.com/2.14.0/spots/create.png"
+                    alt="Team collaborating around a table"
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/f4f5f7/172b4d?text=Image+Not+Found';">
+          </div>
+          <!-- Content Section -->
+          <div class="tile-content">
+              <h3 class="tile-title">Designing Wave</h3>
+              <p class="tile-description">
+                  General guidelines on Wave's product look and fell and experience principles.
+              </p>
+          </div>
+      </a>
+
+      <!-- TILE 2 -->
+      <a href="https://waveaccounting.atlassian.net/wiki/spaces/P2/pages/4824629364/Product+design+process+-+How+we+get+work+done" target="_blank" class="content-tile">
+          <!-- Image Section -->
+          <div class="tile-image-container">
+              <img class="tile-image"
+                    src="https://illustrations.waveapps.com/2.14.0/spots/ngo.png"
+                    alt="Team collaborating around a table"
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/f4f5f7/172b4d?text=Image+Not+Found';">
+          </div>
+          <!-- Content Section -->
+          <div class="tile-content">
+              <h3 class="tile-title">How we get work done</h3>
+              <p class="tile-description">
+                  Learn how the design process fits into our general product development flow, and what are the milestones every designer should meet.
+              </p>
+          </div>
+      </a>
+
+      <!-- TILE 3 -->
+      <a href="https://waveaccounting.atlassian.net/wiki/spaces/P2/pages/4832264267/End-to-end+ideal+experience+map" target="_blank" class="content-tile">
+          <!-- Image Section -->
+          <div class="tile-image-container">
+              <img class="tile-image"
+                    src="https://illustrations.waveapps.com/2.14.0/spots/location.png"
+                    alt="Team collaborating around a table"
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/f4f5f7/172b4d?text=Image+Not+Found';">
+          </div>
+          <!-- Content Section -->
+          <div class="tile-content">
+              <h3 class="tile-title">End-to-end ideal experience map</h3>
+              <p class="tile-description">
+                  Check out the ideal journey a Wave users usually goes through.
+              </p>
+          </div>
+      </a>
+  </div>
+</body>
