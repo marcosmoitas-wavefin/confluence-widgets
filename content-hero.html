@@ -1,153 +1,131 @@
-<style>
-    /* * Main container for the hero section.
-        * Uses flexbox for a side-by-side layout on larger screens.
-        * Set to 100% width to act as a full-width banner.
-        * Includes basic styling like border and rounded corners.
-    */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confluence Design Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #FFF;
+      margin: 0;
+      padding: 16px;
+    }
+
     .hero-section {
-        display: flex;
-        width: 100%;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        border: 1px solid #dfe1e6;
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: #ffffff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0);
-        transition: box-shadow 0.3s ease-in-out;
-        /* A minimum height for the hero section */
-        min-height: 320px;
+      display: flex;
+      width: 98%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      border: 1px solid #dfe1e6;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0);
+      transition: box-shadow 0.3s ease-in-out;
+      min-height: 320px;
     }
 
     .hero-section:hover {
-        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        border-color: blue;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border-color: blue;
     }
 
-    /* * Container for the image.
-        * Takes up 50% of the width on desktop.
-        * The position is relative to allow absolute positioning of the image inside.
-    */
     .hero-image-container {
-        width: 40%;
-        position: relative;
-        background-color: #F1E8FC; /* Placeholder color */
+      width: 40%;
+      position: relative;
+      background-color: #F1E8FC;
     }
 
-    /* * The image itself.
-        * Positioned absolutely to fill the entire container.
-        * object-fit: cover ensures the image scales to cover the area without distortion.
-    */
     .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Ensures the image covers the container without distortion */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
-    /* * Container for the text content.
-        * Takes up the other 50% of the width.
-        * Uses flexbox to vertically center the content inside.
-        * Generous padding for spacing.
-    */
     .hero-content {
-        width: 50%;
-        padding: 48px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      width: 50%;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    /* * Styles for the hero title.
-        * Larger font size for emphasis.
-    */
     .hero-title {
-        font-size: 32px;
-        font-weight: 700;
-        color: #172b4d;
-        margin: 0 0 16px 0;
+      font-size: 32px;
+      font-weight: 700;
+      color: #172b4d;
+      margin: 0 0 16px 0;
     }
 
-    /* * Styles for the hero description.
-        * Increased font size and line height for readability.
-    */
     .hero-description {
-        font-size: 16px;
-        color: #42526e;
-        line-height: 1.6;
-        margin: 0;
-        max-width: 500px; /* Prevents text lines from becoming too long */
-        margin: 0 0 24px 0;
+      font-size: 16px;
+      color: #42526e;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 500px;
+      margin: 0 0 24px 0;
     }
 
-
-    /* * Responsive styles for smaller screens (e.g., tablets and mobile phones).
-        * The media query triggers when the screen width is 768px or less.
-    */
     @media (max-width: 768px) {
-        /* Stacks the layout vertically */
-        .hero-section {
-            flex-direction: column;
-            min-height: unset;
-        }
-
-        /* Image container takes full width and uses a 16:9 aspect ratio */
-        .hero-image-container {
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        }
-
-        /* Content container also takes full width */
-        .hero-content {
-            width: 100%;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 24px;
-        }
-
-        .hero-description {
-            font-size: 14px;
-            max-width: 100%;
-        }
+      .hero-section {
+        flex-direction: column;
+        min-height: unset;
+      }
+      .hero-image-container {
+        width: 100%;
+        padding-top: 56.25%;
+      }
+      .hero-content {
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+      }
+      .hero-title {
+        font-size: 24px;
+      }
+      .hero-description {
+        font-size: 14px;
+        max-width: 100%;
+      }
     }
 
     .hero-link-wrapper {
-        display: block;
-        width: 100%;
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
     .hero-link-wrapper:focus .hero-section,
     .hero-link-wrapper:hover .hero-section {
-        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        border-color: blue;
-        outline: none;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border-color: blue;
+      outline: none;
     }
-</style>
-
-
-<!-- Hero Section -->
-<a href="https://waveaccounting.atlassian.net/wiki/spaces/P2/pages/1069745697/Product+content+strategy" target="_blank" class="hero-link-wrapper" style="text-decoration: none; color: inherit;">
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <a href="https://waveaccounting.atlassian.net/wiki/spaces/P2/pages/1069745697/Product+content+strategy" target="_blank" class="hero-link-wrapper" style="text-decoration: none; color: inherit;">
     <div class="hero-section">
-        <!-- Image on the left -->
-        <div class="hero-image-container">
-            <img class="hero-image"
-                    src="https://illustrations.waveapps.com/2.14.0/spots/employee.png"
-                    alt="A person typing on a laptop while a cat sits nearby."
-                    onerror="this.onerror=null;this.src='https://placehold.co/800x600/f4f5f7/172b4d?text=Image+Not+Found';">
-        </div>
-
-        <!-- Content on the right -->
-        <div class="hero-content">
-            <h2 class="hero-title">Product content guidelines</h2>
-            <p class="hero-description">
-                How to write clear, human in-app copy that empowers users to achieve desired outcomes.
-            </p>
-        </div>
+      <!-- Image on the left -->
+      <div class="hero-image-container">
+        <img class="hero-image"
+          src="https://illustrations.waveapps.com/2.14.0/spots/employee.png"
+          alt="A person typing on a laptop while a cat sits nearby."
+          onerror="this.onerror=null;this.src='https://placehold.co/800x600/f4f5f7/172b4d?text=Image+Not+Found';">
+      </div>
+      <!-- Content on the right -->
+      <div class="hero-content">
+        <h2 class="hero-title">Product content guidelines</h2>
+        <p class="hero-description">
+          How to write clear, human in-app copy that empowers users to achieve desired outcomes.
+        </p>
+      </div>
     </div>
-</a>
+  </a>
+</body>
+</html>
